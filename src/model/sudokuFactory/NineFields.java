@@ -1,4 +1,4 @@
-package model.sudokuGenerator;
+package model.sudokuFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +14,8 @@ public class NineFields {
         return fields.get(i);
     }
 
-    public void add(int value){
-        fields.add(new SudokuField(value));
+    public void add(SudokuField field){
+        fields.add(field);
     }
 
     public boolean contains(int value){
@@ -28,7 +28,7 @@ public class NineFields {
         return  contains;
     }
 
-    public List getFields() {
+    public List<SudokuField> getFields() {
         return fields;
     }
 }

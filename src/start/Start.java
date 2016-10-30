@@ -5,6 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.sudokuFactory.Sudoku;
+import model.sudokuFactory.SudokuFactory;
+import model.validation.SudokuValidator;
 
 public class Start extends Application {
 
@@ -18,6 +21,10 @@ public class Start extends Application {
 
 
     public static void main(String[] args) {
-        launch(args);
+//        launch(args);
+        Sudoku sudoku = new SudokuFactory().getSudoku();
+        SudokuValidator validator = new SudokuValidator();
+        validator.validate(sudoku);
+        System.out.println();
     }
 }

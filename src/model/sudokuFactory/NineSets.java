@@ -1,4 +1,4 @@
-package model.sudokuGenerator;
+package model.sudokuFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,9 +16,6 @@ public class NineSets {
         }
     }
 
-    public void add(int value){
-        sets.get(sets.size()-1).add(value);
-    }
 
     public List<NineFields> getSets() {
         return sets;

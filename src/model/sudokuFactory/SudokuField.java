@@ -1,4 +1,4 @@
-package model.sudokuGenerator;
+package model.sudokuFactory;
 
 import java.util.*;
 
@@ -7,7 +7,7 @@ import java.util.*;
  */
 public class SudokuField{
     private int value;
-    private Collection<SudokuField> linkedFields;
+    private Collection<SudokuField> linkedFields = new ArrayList<>();
     private Set possibleValues = new HashSet<>(Arrays.asList(1,2,3,4,5,6,7,8,9));
 
     public SudokuField(int value) {
@@ -19,7 +19,7 @@ public class SudokuField{
         return value;
     }
 
-    public Collection getLinkedFields() {
+    public Collection<SudokuField> getLinkedFields() {
         return linkedFields;
     }
 

@@ -1,4 +1,4 @@
-package model.sudokuGenerator;
+package model.sudokuFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,14 +6,14 @@ import java.util.List;
 /**
  * Created by vkukanauskas on 27/10/2016.
  */
-public class SudokuGenerator {
-    SudokuDTO sudoku = new SudokuDTO();
+public class SudokuFactory {
+    Sudoku sudoku;
 
-    public SudokuDTO getSudoku() {
-        sudoku = new SudokuDTO();
+    public Sudoku getSudoku() {
         int validFields;
         do {
             validFields = 0;
+            sudoku = new Sudoku(new NineSets(), new NineSets(), new NineSets());
             initial:
             for (int row = 0; row < 9; row++) {
                 for (int column = 0; column < 9; column++) {
@@ -30,23 +30,34 @@ public class SudokuGenerator {
                     }
                 }
             }
-        } while (validFields < 81);
+        } while (validFields<81);
+        SudokuLinkedFieldsInitialiser.init(sudoku);
         return sudoku;
     }
 
 
     private void insertNumberIntoSudoku(int row, int column, int number) {
-        sudoku.getHorizontalLines().get(row).add(number);
-        sudoku.getVerticalLines().get(column).add(number);
-        sudoku.getCubics().get(sudoku.getCubicleNumber(row, column)).add(number);
+        SudokuField field = new SudokuField(number);
+        sudoku.getHorizontalLines().get(row).add(field);
+        sudoku.getVerticalLines().get(column).add(field);
+        sudoku.getCubics().get(sudoku.getCubicleNumber(row, column)).add(field);
         System.out.println();
     }
 
     private boolean numberIsUnique(int row, int column, int number) {
-        boolean isUnique = !(sudoku.getVerticalLines().get(column).contains(number) &&
-                sudoku.getHorizontalLines().get(row).contains(number) &&
-                sudoku.getCubics().get(sudoku.getCubicleNumber(row, column)).contains(number));
-        return isUnique;
+        int cubicleNumber = sudoku.getCubicleNumber(row, column);
+        NineFields vertical = sudoku.getVerticalLines().get(column);
+        NineFields horizontal = sudoku.getHorizontalLines().get(row);
+        NineFields cubes = sudoku.getCubics().get(cubicleNumber);
+        boolean hori = horizontal.contains(number);
+        if (!vertical.contains(number)
+            && !horizontal.contains(number)
+            && !cubes.contains(number)) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
 
     List<Integer> get9UniqueNumbersInRandomOrder() {
