@@ -56,6 +56,8 @@ public class SudokuTest {
     }
 
 
+
+
     @Test
     public void testLinkedFieldSizeInFreshSudoku() {
         Sudoku sudoku = factory.getSudoku();

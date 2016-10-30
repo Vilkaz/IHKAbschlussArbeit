@@ -9,7 +9,6 @@ import java.util.List;
 public class NineFields {
     private List<SudokuField> fields = new ArrayList();
 
-
     public SudokuField get(int i){
         return fields.get(i);
     }
@@ -26,6 +25,14 @@ public class NineFields {
             }
         }
         return  contains;
+    }
+
+    public int getAmountOfLinkedFields(){
+        int amount = 0;
+        for (SudokuField field:fields){
+            amount+=field.getAmountOfLinkedFields();
+        }
+        return amount;
     }
 
     public List<SudokuField> getFields() {

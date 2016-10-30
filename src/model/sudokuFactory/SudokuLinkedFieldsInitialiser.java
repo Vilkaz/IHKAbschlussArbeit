@@ -18,6 +18,5 @@ public class SudokuLinkedFieldsInitialiser {
 
           }
         }
-        System.out.println();
     }
 }

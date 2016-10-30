@@ -7,10 +7,10 @@ import java.util.List;
  * Created by vkukanauskas on 27/10/2016.
  */
 public class SudokuFactory {
-    Sudoku sudoku;
+    private Sudoku sudoku;
+    private int validFields;
 
     public Sudoku getSudoku() {
-        int validFields;
         do {
             validFields = 0;
             sudoku = new Sudoku(new NineSets(), new NineSets(), new NineSets());
@@ -30,18 +30,27 @@ public class SudokuFactory {
                     }
                 }
             }
-        } while (validFields<81);
+        } while (validFields < 81);
         SudokuLinkedFieldsInitialiser.init(sudoku);
+        return sudoku;
+    }
+
+    public Sudoku getEmptySudokuModel() {
+        sudoku = new Sudoku(new NineSets(), new NineSets(), new NineSets());
+        for (int row = 0; row < 9; row++) {
+            for (int column = 0; column < 9; column++) {
+                insertNumberIntoSudoku(row, column, 0);
+            }
+        }
         return sudoku;
     }
 
 
     private void insertNumberIntoSudoku(int row, int column, int number) {
-        SudokuField field = new SudokuField(number);
+        SudokuField field = new SudokuField(this.validFields, number);
         sudoku.getHorizontalLines().get(row).add(field);
         sudoku.getVerticalLines().get(column).add(field);
         sudoku.getCubics().get(sudoku.getCubicleNumber(row, column)).add(field);
-        System.out.println();
     }
 
     private boolean numberIsUnique(int row, int column, int number) {
@@ -51,8 +60,8 @@ public class SudokuFactory {
         NineFields cubes = sudoku.getCubics().get(cubicleNumber);
         boolean hori = horizontal.contains(number);
         if (!vertical.contains(number)
-            && !horizontal.contains(number)
-            && !cubes.contains(number)) {
+                && !horizontal.contains(number)
+                && !cubes.contains(number)) {
             return true;
         } else {
             return false;

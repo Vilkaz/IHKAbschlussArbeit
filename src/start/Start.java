@@ -7,7 +7,10 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.sudokuFactory.Sudoku;
 import model.sudokuFactory.SudokuFactory;
+import model.validation.LinkedFieldSizeValidator;
 import model.validation.SudokuValidator;
+
+import java.util.List;
 
 public class Start extends Application {
 
@@ -22,9 +25,14 @@ public class Start extends Application {
 
     public static void main(String[] args) {
 //        launch(args);
+//        Sudoku sudoku = new SudokuFactory().getEmptySudokuModel();
         Sudoku sudoku = new SudokuFactory().getSudoku();
         SudokuValidator validator = new SudokuValidator();
-        validator.validate(sudoku);
-        System.out.println();
+        int i = 0;
+        do{
+            validator.validate(sudoku);
+            i++;
+        } while (!LinkedFieldSizeValidator.areAllFieldsValidated(sudoku.getAllFields()));
+        System.out.println(i);
     }
 }
