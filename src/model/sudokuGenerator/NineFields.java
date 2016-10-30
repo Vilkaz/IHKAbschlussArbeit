@@ -10,6 +10,10 @@ public class NineFields {
     private List<SudokuField> fields = new ArrayList();
 
 
+    public SudokuField get(int i){
+        return fields.get(i);
+    }
+
     public void add(int value){
         fields.add(new SudokuField(value));
     }
@@ -23,8 +27,6 @@ public class NineFields {
         }
         return  contains;
     }
-
-
 
     public List getFields() {
         return fields;

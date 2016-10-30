@@ -1,7 +1,6 @@
 package model.sudokuGenerator;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -12,9 +11,9 @@ public class SudokuGenerator {
 
     public SudokuDTO getSudoku() {
         sudoku = new SudokuDTO();
-        int fieldCounter;
+        int validFields;
         do {
-            fieldCounter = 0;
+            validFields = 0;
             initial:
             for (int row = 0; row < 9; row++) {
                 for (int column = 0; column < 9; column++) {
@@ -22,17 +21,16 @@ public class SudokuGenerator {
                     for (int number : get9UniqueNumbersInRandomOrder()) {
                         if (numberIsUnique(row, column, number)) {
                             insertNumberIntoSudoku(row, column, number);
-                            fieldCounter++;
+                            validFields++;
                             break;
                         } else {
                             trys++;
                         }
-//                        if (trys == 9) break initial;
+                        if (trys == 9) break initial;
                     }
-
                 }
             }
-        } while (fieldCounter < 81);
+        } while (validFields < 81);
         return sudoku;
     }
 

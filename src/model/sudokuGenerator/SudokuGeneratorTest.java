@@ -12,7 +12,8 @@ import static org.junit.Assert.*;
 
 public class SudokuGeneratorTest {
 
-    private SudokuDTO sudoku = new SudokuGenerator().getSudoku();
+    SudokuGenerator sudokuGenerator = new SudokuGenerator();
+    private SudokuDTO sudoku = sudokuGenerator.getSudoku();
     NineSets vertical = sudoku.getVerticalLines();
     NineSets horizontal = sudoku.getVerticalLines();
     NineSets cubics = sudoku.getVerticalLines();
@@ -31,7 +32,7 @@ public class SudokuGeneratorTest {
 
     @Test
     public void testGet9UniqueNumbersInRandomOrder() {
-        List<Integer> uniqueNumbers = new SudokuGenerator().get9UniqueNumbersInRandomOrder();
+        List<Integer> uniqueNumbers = sudokuGenerator.get9UniqueNumbersInRandomOrder();
         Collections.sort(uniqueNumbers);
         for (int i = 1; i <= 9; i++) {
             assertEquals(i, (int) uniqueNumbers.get(i - 1));
@@ -46,28 +47,19 @@ public class SudokuGeneratorTest {
         assertTrue(cubics.getSets().size() == 9);
     }
 
-//    @Test
-//    public void test9NoEmtyValuesInSets() {
-//        boolean valid = (hasValidValues(vertical) &&
-//                hasValidValues(horizontal) &&
-//                hasValidValues(cubics));
-//        assertTrue(valid);
-//
-//    }
+    @Test
+    public void testOneSpecificFieldTemTimes(){
+        for (int i=0;i<10;i++){
+            SudokuDTO sudoku = sudokuGenerator.getSudoku();
+            assertTrue(testBottomRightFieldOfFirstCubic(sudoku));
+        }
+    }
 
-//    private boolean hasValidValues(NineSets set) {
-//        boolean valid = true;
-//        for (int i = 0; i < 9; i++) {
-//            SudokuField field = set.getSets().get(i);
-//            if (field == null) {
-//                valid = false;
-//            } else {
-//                if (field.getValue() < 1 || field.getValue() > 9) {
-//                    valid = false;
-//                }
-//            }
-//        }
-//        return valid;
-//    }
+    private boolean testBottomRightFieldOfFirstCubic(SudokuDTO sudoku) {
+        int verticalValue = sudoku.getVerticalLines().get(2).get(2).getValue();
+        int horizontalValue = sudoku.getHorizontalLines().get(2).get(2).getValue();
+        int cubeValue = sudoku.getCubics().get(0).get(8).getValue();
+        return (verticalValue == horizontalValue) && (verticalValue == cubeValue);
+    }
 
 }
