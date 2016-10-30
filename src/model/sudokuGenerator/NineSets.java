@@ -8,14 +8,28 @@ import java.util.List;
  */
 public class NineSets {
 
-    private List<NineFieldSet> sets = new ArrayList<NineFieldSet>();
+    private List<NineFields> sets = new ArrayList<NineFields>();
 
-    public List getSets() {
+    public NineSets() {
+        for (int i =0;i<9;i++){
+            sets.add(new NineFields());
+        }
+    }
+
+    public void add(int value){
+        sets.get(sets.size()-1).add(value);
+    }
+
+    public List<NineFields> getSets() {
         return sets;
     }
 
+    public NineFields get(int i){
+        return sets.get(i);
+    }
+
     public boolean contains(int i){
-        for (NineFieldSet set : sets){
+        for (NineFields set : sets){
              if (set.contains(i)){
                  return true;
              }

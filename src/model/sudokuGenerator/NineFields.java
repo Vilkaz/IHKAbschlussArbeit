@@ -1,12 +1,18 @@
 package model.sudokuGenerator;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by vkukanauskas on 29/10/2016.
  */
-public class NineFieldSet {
-    private List<SudokuField>  fields = new ArrayList();
+public class NineFields {
+    private List<SudokuField> fields = new ArrayList();
+
+
+    public void add(int value){
+        fields.add(new SudokuField(value));
+    }
 
     public boolean contains(int value){
         boolean contains = false;
@@ -20,7 +26,7 @@ public class NineFieldSet {
 
 
 
-    public SudokuField[] getFields() {
+    public List getFields() {
         return fields;
     }
 }

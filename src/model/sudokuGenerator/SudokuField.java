@@ -10,6 +10,11 @@ public class SudokuField{
     private Collection<SudokuField> linkedFields;
     private Set possibleValues = new HashSet<>(Arrays.asList(1,2,3,4,5,6,7,8,9));
 
+    public SudokuField(int value) {
+        this.value = value;
+
+    }
+
     public int getValue() {
         return value;
     }
