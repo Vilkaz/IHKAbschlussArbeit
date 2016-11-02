@@ -1,5 +1,6 @@
 .sudokuField{
-    -fx-background-color: dimgray;
-    -fx-max-width: 100%;
-    -fx-min-width: 100%;
+    -fx-padding: 10px;
+    -fx-border-insets: 1px;
+    -fx-background-insets: 1px;
+    -fx-pref-width: 35px;
 }

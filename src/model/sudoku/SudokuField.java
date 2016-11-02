@@ -1,5 +1,9 @@
 package model.sudoku;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 import java.util.*;
 
 /**
@@ -10,7 +14,20 @@ public class SudokuField {
     private int value;
     private List<SudokuField> linkedFields = new ArrayList<>();
     private Set<Integer> possibleValues = new HashSet<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
+    private SimpleStringProperty viewValue = new SimpleStringProperty();
 
+    public String getViewValue() {
+        return viewValue.get();
+    }
+
+    public SimpleStringProperty viewValueProperty() {
+        if (value==0){
+            viewValue.set("");
+        } else {
+            viewValue.set(String.valueOf(this.value));
+        }
+        return viewValue;
+    }
 
     public SudokuField(int value) {
         this.value = value;

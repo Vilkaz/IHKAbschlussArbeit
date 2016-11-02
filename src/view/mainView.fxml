@@ -23,7 +23,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <GridPane fx:id="cube1" gridLinesVisible="true">
+            <GridPane fx:id="cube1" alignment="CENTER" gridLinesVisible="true">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -35,8 +35,15 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" styleClass="sudokuField" text="0" />
-                  <Text id="sudokuField1" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.rowIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                </children>
                <GridPane.margin>
                   <Insets />
@@ -53,6 +60,17 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.rowIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
             </GridPane>
             <GridPane fx:id="cube9" gridLinesVisible="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <columnConstraints>
@@ -65,6 +83,17 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.rowIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
             </GridPane>
             <GridPane fx:id="cube8" gridLinesVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <columnConstraints>
@@ -77,6 +106,17 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.rowIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
             </GridPane>
             <GridPane fx:id="cube7" gridLinesVisible="true" GridPane.rowIndex="2">
                <columnConstraints>
@@ -89,6 +129,17 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.rowIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
             </GridPane>
             <GridPane fx:id="cube6" gridLinesVisible="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <columnConstraints>
@@ -101,6 +152,17 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.rowIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
             </GridPane>
             <GridPane fx:id="cube5" gridLinesVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <columnConstraints>
@@ -113,6 +175,17 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.rowIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
             </GridPane>
             <GridPane fx:id="cube3" gridLinesVisible="true" GridPane.columnIndex="2">
                <columnConstraints>
@@ -125,6 +198,17 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.rowIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
             </GridPane>
             <GridPane fx:id="cube4" gridLinesVisible="true" GridPane.rowIndex="1">
                <columnConstraints>
@@ -137,6 +221,17 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.rowIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="sudokuField" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
             </GridPane>
          </children>
       </GridPane>
