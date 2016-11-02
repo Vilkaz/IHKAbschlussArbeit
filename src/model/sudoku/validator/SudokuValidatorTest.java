@@ -29,7 +29,7 @@ public class SudokuValidatorTest {
     }
 
     @Test
-    public void testSolveSudokuWithTwiIdenticalValuesInSameSet() {
+    public void testSolveSudokuWithTwoIdenticalValuesInSameSet() {
         Sudoku sudoku = factory.getSudoku();
         SudokuField field1 = sudoku.getAllFields().get(0);
         SudokuField field2 = sudoku.getAllFields().get(1);

@@ -22,7 +22,7 @@ public class Start extends Application {
 
 
     public static void main(String[] args) {
-//        launch(args);
+        launch(args);
 //        Sudoku sudoku = new SudokuFactory().getEmptySudokuModel();
         Sudoku sudoku = new SudokuFactory().getSudoku();
         SudokuRules validator = new SudokuRules();
