@@ -1,4 +1,4 @@
-package model.validation;
+package model.sudoku.rules;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -9,7 +9,7 @@ import java.util.Collection;
 public class SudokuRulesFactory {
     public static Collection<SudokuRule> getRules() {
         Collection<SudokuRule> rules = new ArrayList<SudokuRule>();
-        ValidateCoherenceByOnlyOneValueInEachSet coherehnceByValueRule = new ValidateCoherenceByOnlyOneValueInEachSet();
+        OnlyOneValueInEachSet coherehnceByValueRule = new OnlyOneValueInEachSet();
         rules.add(coherehnceByValueRule);
         return rules;
     }

@@ -1,4 +1,4 @@
-package model.sudokuFactory;
+package model.sudoku;
 
 import java.util.*;
 
@@ -9,7 +9,8 @@ public class SudokuField {
     private int id;
     private int value;
     private List<SudokuField> linkedFields = new ArrayList<>();
-    private Set possibleValues = new HashSet<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
+    private Set<Integer> possibleValues = new HashSet<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
+
 
     public SudokuField(int value) {
         this.value = value;
@@ -29,6 +30,8 @@ public class SudokuField {
             }
         }
     }
+
+
 
     public int getAmountOfLinkedFields(){
         return linkedFields.size();
@@ -52,6 +55,10 @@ public class SudokuField {
         return null;
     }
 
+    public void setValue(int value) {
+        this.value = value;
+    }
+
     public int getValue() {
         return value;
     }
@@ -60,9 +67,8 @@ public class SudokuField {
         return linkedFields;
     }
 
-    public Set getPossibleValues() {
-        return possibleValues;
-    }
+
+
 
     public int getId() {
         return id;
@@ -74,5 +80,18 @@ public class SudokuField {
             ids.add(field.getId());
         }
         return ids;
+    }
+
+    public void calculateValue() {
+        for (SudokuField field :  linkedFields){
+            possibleValues.remove(field.getValue());
+        }
+        if (possibleValues.size()==1){
+            this.value=possibleValues.iterator().next();
+        }
+    }
+
+    public Set<Integer> getPossibleValues() {
+        return possibleValues;
     }
 }

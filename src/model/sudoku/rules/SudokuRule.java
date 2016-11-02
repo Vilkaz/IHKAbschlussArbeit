@@ -1,6 +1,6 @@
-package model.validation;
+package model.sudoku.rules;
 
-import model.sudokuFactory.Sudoku;
+import model.sudoku.Sudoku;
 
 /**
  * Created by Vilkas on 30/10/2016.

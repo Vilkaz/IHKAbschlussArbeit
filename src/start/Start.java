@@ -5,12 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import model.sudokuFactory.Sudoku;
-import model.sudokuFactory.SudokuFactory;
-import model.validation.LinkedFieldSizeValidator;
-import model.validation.SudokuValidator;
-
-import java.util.List;
+import model.sudoku.Sudoku;
+import model.sudoku.SudokuFactory;
+import model.sudoku.rules.LinkedFieldSizeValidator;
+import model.sudoku.rules.SudokuRules;
 
 public class Start extends Application {
 
@@ -27,12 +25,12 @@ public class Start extends Application {
 //        launch(args);
 //        Sudoku sudoku = new SudokuFactory().getEmptySudokuModel();
         Sudoku sudoku = new SudokuFactory().getSudoku();
-        SudokuValidator validator = new SudokuValidator();
+        SudokuRules validator = new SudokuRules();
         int i = 0;
         do{
-            validator.validate(sudoku);
+            validator.learnRules(sudoku);
             i++;
-        } while (!LinkedFieldSizeValidator.areAllFieldsValidated(sudoku.getAllFields()));
+        } while (!LinkedFieldSizeValidator.areAllFieldsValide(sudoku.getAllFields()));
         System.out.println(i);
     }
 }

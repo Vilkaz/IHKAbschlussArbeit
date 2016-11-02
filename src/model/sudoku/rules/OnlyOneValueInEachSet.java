@@ -1,17 +1,15 @@
-package model.validation;
+package model.sudoku.rules;
 
-import model.sudokuFactory.Sudoku;
-import model.sudokuFactory.SudokuFactory;
-import model.sudokuFactory.SudokuField;
+import model.sudoku.Sudoku;
+import model.sudoku.SudokuFactory;
+import model.sudoku.SudokuField;
 
-import java.util.Iterator;
-import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
  * Created by Vilkas on 30/10/2016.
  */
-public class ValidateCoherenceByOnlyOneValueInEachSet implements SudokuRule {
+public class OnlyOneValueInEachSet implements SudokuRule {
     SudokuFactory sudokuFactory = new SudokuFactory();
 
     @Override

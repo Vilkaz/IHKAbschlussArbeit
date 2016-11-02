@@ -1,4 +1,4 @@
-package model.sudokuFactory;
+package model.sudoku;
 
 import org.junit.Test;
 

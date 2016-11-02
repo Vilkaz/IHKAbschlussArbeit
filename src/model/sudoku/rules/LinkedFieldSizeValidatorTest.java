@@ -1,6 +1,6 @@
-package model.validation;
+package model.sudoku.rules;
 
-import model.sudokuFactory.SudokuField;
+import model.sudoku.SudokuField;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public class LinkedFieldSizeValidatorTest {
         SudokuField field2 = new SudokuField(2);
         SudokuField field3 = new SudokuField(3);
         List list = new ArrayList<>(Arrays.asList(field1, field2, field3));
-        assertFalse(LinkedFieldSizeValidator.areAllFieldsValidated(list));
+        assertFalse(LinkedFieldSizeValidator.areAllFieldsValide(list));
     }
 
     @Test
@@ -32,7 +32,7 @@ public class LinkedFieldSizeValidatorTest {
         SudokuField field2 = new SudokuField(2);
         field2.getLinkedFields().addAll(list);
         List list2 = new ArrayList(Arrays.asList(field2));
-        assertTrue(LinkedFieldSizeValidator.areAllFieldsValidated(list2));
+        assertTrue(LinkedFieldSizeValidator.areAllFieldsValide(list2));
     }
 
 
