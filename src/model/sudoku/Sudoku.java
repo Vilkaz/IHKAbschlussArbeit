@@ -34,6 +34,16 @@ public class Sudoku {
         return fields;
     }
 
+    public void copyValuesFrom(Sudoku sudoku){
+        List<SudokuField> myFields = this.getAllFields();
+        for (int i=0;i<myFields.size();i++){
+            SudokuField valueField = sudoku.getAllFields().get(i);
+            SudokuField myField = myFields.get(i);
+            myField.setValue(valueField.getValue());
+        }
+
+    }
+
 
     public NineSets getVerticalLines() {
         return verticalLines;

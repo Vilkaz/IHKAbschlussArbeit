@@ -15,16 +15,16 @@ public class OnlyOneValueInEachSet implements SudokuRule {
     @Override
     public void validate(Sudoku sudoku) {
         Sudoku newSudoku = sudokuFactory.getSudoku();
+        sudoku.copyValuesFrom(newSudoku);
+
         List<SudokuField> checkList = sudoku.getAllFields();
-        List<SudokuField> freshList = newSudoku.getAllFields();
         for (int outerCounter =0;outerCounter<sudoku.getAllFields().size();outerCounter++){
             {
                 SudokuField checkField = checkList.get(outerCounter);
-                SudokuField freshField = freshList.get(outerCounter);
                 List<Integer> listOfLinkedIDs = checkField.getLinkedFieldsIDs();
                 for (int i:listOfLinkedIDs){
-                    SudokuField check = freshField.getLinkedFieldByID(i);
-                    if (check.getValue()==freshField.getValue()){
+                    SudokuField check = checkField.getLinkedFieldByID(i);
+                    if (check.getValue()==checkField.getValue()){
                         checkField.removeLinkedFieldByID(i);
                     }
                 }

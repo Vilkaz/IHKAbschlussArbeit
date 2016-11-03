@@ -72,6 +72,8 @@ public class SudokuField {
         return null;
     }
 
+
+
     public void setValue(int value) {
         this.value = value;
     }
