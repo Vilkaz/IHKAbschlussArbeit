@@ -17,7 +17,7 @@ public class SudokuRules {
     public void learnRules(Sudoku sudoku) {
         do {
             for (SudokuRule rule : rules) {
-                rule.validate(sudoku);
+                rule.implementRule(sudoku);
             }
         } while (!LinkedFieldSizeValidator.areAllFieldsValide(sudoku.getAllFields()));
     }
