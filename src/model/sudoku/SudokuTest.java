@@ -40,7 +40,7 @@ public class SudokuTest {
         Sudoku sudoku = factory.getSudoku();
         SudokuField verticalField = sudoku.getVerticalLines().get(0).get(0);
         SudokuField horizontalField = sudoku.getHorizontalLines().get(0).get(0);
-        SudokuField cubicField = sudoku.getCubics().get(0).get(0);
+        SudokuField cubicField = sudoku.getCubes().get(0).get(0);
         assertTrue(verticalField == horizontalField);
         assertTrue(horizontalField == cubicField);
     }
@@ -50,7 +50,7 @@ public class SudokuTest {
         Sudoku sudoku = factory.getSudoku();
         SudokuField verticalField = sudoku.getVerticalLines().get(8).get(8);
         SudokuField horizontalField = sudoku.getHorizontalLines().get(8).get(8);
-        SudokuField cubicField = sudoku.getCubics().get(8).get(8);
+        SudokuField cubicField = sudoku.getCubes().get(8).get(8);
         assertTrue(verticalField == horizontalField);
         assertTrue(horizontalField == cubicField);
     }

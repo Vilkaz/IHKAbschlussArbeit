@@ -12,12 +12,12 @@ public class Sudoku {
 
     private NineSets verticalLines = new NineSets();
     private NineSets horizontalLines = new NineSets();
-    private NineSets cubics = new NineSets();
+    private NineSets cubes = new NineSets();
 
-    public Sudoku(NineSets verticalLines, NineSets horizontalLines, NineSets cubics) {
+    public Sudoku(NineSets verticalLines, NineSets horizontalLines, NineSets cubes) {
         this.verticalLines = verticalLines;
         this.horizontalLines = horizontalLines;
-        this.cubics = cubics;
+        this.cubes = cubes;
     }
 
     public Sudoku()throws InitializationError {
@@ -43,8 +43,8 @@ public class Sudoku {
         return horizontalLines;
     }
 
-    public NineSets getCubics() {
-        return cubics;
+    public NineSets getCubes() {
+        return cubes;
     }
     /**
      * takes row and collumn from actual number, and calculates in which cubical Field the number is

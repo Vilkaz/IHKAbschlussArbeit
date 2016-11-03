@@ -58,7 +58,7 @@ public class SudokuFactoryTest {
     private boolean testBottomRightFieldOfFirstCubic(Sudoku sudoku) {
         int verticalValue = sudoku.getVerticalLines().get(2).get(2).getValue();
         int horizontalValue = sudoku.getHorizontalLines().get(2).get(2).getValue();
-        int cubeValue = sudoku.getCubics().get(0).get(8).getValue();
+        int cubeValue = sudoku.getCubes().get(0).get(8).getValue();
         return (verticalValue == horizontalValue) && (verticalValue == cubeValue);
     }
 

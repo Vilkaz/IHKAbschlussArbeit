@@ -4,9 +4,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
-import model.sudoku.Sudoku;
-import model.sudoku.SudokuFactory;
-import model.sudoku.SudokuField;
+import model.sudoku.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by Vilkas on 02/11/2016.
@@ -16,15 +18,28 @@ public class MainViewController {
     SudokuFactory factory = new SudokuFactory();
 
     @FXML
-    public GridPane cube1,cube2,cube3,cube4,cube5,cube6,cube7,cube8,cube9;
+    private GridPane cube1,cube2,cube3,cube4,cube5,cube6,cube7,cube8,cube9;
 
     @FXML
     public void generateSudoku(ActionEvent actionEvent) {
         Sudoku sudoku = factory.getSudoku();
-        Button button = (Button) cube1.getChildren().get(0);
-        SudokuField field = sudoku.getAllFields().get(0);
-        button.textProperty().bind(field.viewValueProperty());
-        System.out.println();
+        bindSudokuFieldsToView(sudoku);
+    }
+
+    private void bindSudokuFieldsToView(Sudoku sudoku) {
+        NineSets sudokuCubes = sudoku.getCubes();
+        List<GridPane> gridCubes = getGridCubes();
+        for (int i = 0;i<9;i++){
+            bindModelCubeToViewCube(sudokuCubes.get(i), gridCubes.get(i));
+        }
+    }
+
+    private void bindModelCubeToViewCube(NineFields modelCube, GridPane viewCube) {
+        for (int i=0;i<9;i++){
+            Button button = (Button) viewCube.getChildren().get(i);
+            SudokuField field = modelCube.getFields().get(i);
+            button.textProperty().bindBidirectional(field.viewValueProperty());
+        }
     }
 
     @FXML
@@ -34,5 +49,11 @@ public class MainViewController {
 
     @FXML
     public void solveSudoku(ActionEvent actionEvent) {
+    }
+
+    private List<GridPane> getGridCubes() {
+        ArrayList<GridPane> cubes = new ArrayList<GridPane>(
+                Arrays.asList(cube1, cube2, cube3, cube4, cube5, cube6, cube7, cube8, cube9));
+        return cubes;
     }
 }

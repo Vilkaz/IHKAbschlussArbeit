@@ -50,14 +50,14 @@ public class SudokuFactory {
         SudokuField field = new SudokuField(this.validFields, number);
         sudoku.getHorizontalLines().get(row).add(field);
         sudoku.getVerticalLines().get(column).add(field);
-        sudoku.getCubics().get(sudoku.getCubicleNumber(row, column)).add(field);
+        sudoku.getCubes().get(sudoku.getCubicleNumber(row, column)).add(field);
     }
 
     private boolean numberIsUnique(int row, int column, int number) {
         int cubicleNumber = sudoku.getCubicleNumber(row, column);
         NineFields vertical = sudoku.getVerticalLines().get(column);
         NineFields horizontal = sudoku.getHorizontalLines().get(row);
-        NineFields cubes = sudoku.getCubics().get(cubicleNumber);
+        NineFields cubes = sudoku.getCubes().get(cubicleNumber);
         boolean hori = horizontal.contains(number);
         if (!vertical.contains(number)
                 && !horizontal.contains(number)

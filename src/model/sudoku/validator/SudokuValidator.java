@@ -25,7 +25,7 @@ public class SudokuValidator {
     private void checkAllSetsForUniqueValues(Sudoku sudoku) {
         checkNineSetForDuplicates(sudoku.getVerticalLines());
         checkNineSetForDuplicates(sudoku.getHorizontalLines());
-        checkNineSetForDuplicates(sudoku.getCubics());
+        checkNineSetForDuplicates(sudoku.getCubes());
     }
 
     private void checkNineSetForDuplicates(NineSets nineSets) {
