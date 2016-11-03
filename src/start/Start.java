@@ -13,7 +13,7 @@ import model.sudoku.rules.SudokuRules;
 public class Start extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/view/mainView.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 300, 275));
@@ -23,14 +23,5 @@ public class Start extends Application {
 
     public static void main(String[] args) {
         launch(args);
-//        Sudoku sudoku = new SudokuFactory().getEmptySudokuModel();
-        Sudoku sudoku = new SudokuFactory().getSudoku();
-        SudokuRules validator = new SudokuRules();
-        int i = 0;
-        do{
-            validator.learnRules(sudoku);
-            i++;
-        } while (!LinkedFieldSizeValidator.areAllFieldsValide(sudoku.getAllFields()));
-        System.out.println(i);
     }
 }
