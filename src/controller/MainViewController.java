@@ -1,6 +1,7 @@
 package controller;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
@@ -113,4 +114,9 @@ public class MainViewController {
     }
 
 
+    public void showLindekFields(ActionEvent event) {
+        Button button = (Button) event.getSource();
+
+        System.out.println();
+    }
 }

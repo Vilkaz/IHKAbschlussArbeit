@@ -3,6 +3,7 @@ package model.sudoku;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import sun.java2d.pipe.SpanShapeRenderer;
 
 import java.util.*;
 
@@ -15,6 +16,7 @@ public class SudokuField {
     private List<SudokuField> linkedFields = new ArrayList<>();
     private Set<Integer> possibleValues;
     private SimpleStringProperty viewValue = new SimpleStringProperty();
+    private SimpleStringProperty cssClass = new SimpleStringProperty();
 
     public String getViewValue() {
         return viewValue.get();
@@ -119,5 +121,17 @@ public class SudokuField {
 
     public Set<Integer> getPossibleValues() {
         return possibleValues;
+    }
+
+    public String getCssClass() {
+        return cssClass.get();
+    }
+
+    public SimpleStringProperty cssClassProperty() {
+        return cssClass;
+    }
+
+    public void setCssClass(String cssClass) {
+        this.cssClass.set(cssClass);
     }
 }
