@@ -15,8 +15,8 @@ public class OnlyOneValueInEachSet implements SudokuRule {
     @Override
     public void validate(Sudoku sudoku) {
         Sudoku newSudoku = sudokuFactory.getSudoku();
+        Sudoku backup = makeBackup(sudoku);
         sudoku.copyValuesFrom(newSudoku);
-
         List<SudokuField> checkList = sudoku.getAllFields();
         for (int outerCounter =0;outerCounter<sudoku.getAllFields().size();outerCounter++){
             {
@@ -30,6 +30,17 @@ public class OnlyOneValueInEachSet implements SudokuRule {
                 }
             }
         }
+        restoreBackup(sudoku, backup);
+    }
+
+    private void restoreBackup(Sudoku sudoku, Sudoku backup) {
+        sudoku.copyValuesFrom(backup);
+    }
+
+    private Sudoku makeBackup(Sudoku sudoku) {
+        Sudoku backup = sudokuFactory.getEmptySudokuModel();
+        backup.copyValuesFrom(sudoku);
+        return backup;
     }
 
     private  List<SudokuField> getNewSudokuFields(){

@@ -26,6 +26,7 @@ public class SudokuBinder {
             Button button = (Button) viewCube.getChildren().get(i);
             SudokuField field = modelCube.getFields().get(i);
             button.textProperty().bindBidirectional(field.viewValueProperty());
+            button.setId(String.valueOf(field.getId()));
         }
     }
 

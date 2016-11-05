@@ -13,7 +13,7 @@ public class SudokuField {
     private int id;
     private int value;
     private List<SudokuField> linkedFields = new ArrayList<>();
-    private Set<Integer> possibleValues = new HashSet<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
+    private Set<Integer> possibleValues;
     private SimpleStringProperty viewValue = new SimpleStringProperty();
 
     public String getViewValue() {
@@ -30,12 +30,13 @@ public class SudokuField {
     }
 
     public SudokuField(int value) {
-        this.value = value;
+        this(-1,value);
     }
 
     public SudokuField(int id, int value) {
         this.id = id;
         this.value = value;
+        initAllPosibleValues();
     }
 
     public void removeLinkedFieldByID(int id){
@@ -102,12 +103,18 @@ public class SudokuField {
     }
 
     public void calculateValue() {
+        initAllPosibleValues();
         for (SudokuField field :  linkedFields){
             possibleValues.remove(field.getValue());
         }
         if (possibleValues.size()==1){
             this.value=possibleValues.iterator().next();
+            this.viewValueProperty().set(String.valueOf(this.value));
         }
+    }
+
+    private void initAllPosibleValues(){
+        this.possibleValues = new HashSet<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
     }
 
     public Set<Integer> getPossibleValues() {

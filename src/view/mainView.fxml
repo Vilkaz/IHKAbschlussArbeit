@@ -236,12 +236,5 @@
          </children>
       </GridPane>
       <Text fx:id="hintText" layoutX="114.0" layoutY="421.0" />
-      <MenuButton layoutX="280.0" layoutY="415.0" mnemonicParsing="false" text="MenuButton">
-        <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
-            <MenuItem mnemonicParsing="false" text="Unspecified Action" />
-        </items>
-      </MenuButton>
    </children>
 </Pane>
