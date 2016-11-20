@@ -62,8 +62,8 @@ public class SudokuFieldTest {
     @Test
     public void testGetValueWith20LinkedFields() {
         Sudoku sudoku = factory.getSudoku();
-        SudokuRules validator = new SudokuRules();
-        validator.learnRules(sudoku);
+        SudokuRules rules = new SudokuRules();
+        rules.teachRules(sudoku);
         SudokuField field = sudoku.getAllFields().get(0);
         field.setValue(0);
         field.calculateValue();

@@ -78,7 +78,6 @@ public class SudokuFactory {
             }
         }
         return randomNumbers;
-
     }
 
     private int getRandomSudokuNumber() {

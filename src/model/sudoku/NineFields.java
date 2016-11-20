@@ -27,14 +27,6 @@ public class NineFields {
         return  contains;
     }
 
-    public int getAmountOfLinkedFields(){
-        int amount = 0;
-        for (SudokuField field:fields){
-            amount+=field.getAmountOfLinkedFields();
-        }
-        return amount;
-    }
-
     public List<SudokuField> getFields() {
         return fields;
     }

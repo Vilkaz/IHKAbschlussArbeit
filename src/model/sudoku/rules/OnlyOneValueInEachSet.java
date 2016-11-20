@@ -13,28 +13,12 @@ public class OnlyOneValueInEachSet implements SudokuRule {
     SudokuFactory sudokuFactory = new SudokuFactory();
 
     @Override
-    public void validate(Sudoku sudoku) {
+    public void implementRule(Sudoku sudoku) {
         Sudoku newSudoku = sudokuFactory.getSudoku();
         Sudoku backup = makeBackup(sudoku);
         sudoku.copyValuesFrom(newSudoku);
-        List<SudokuField> checkList = sudoku.getAllFields();
-        for (int outerCounter =0;outerCounter<sudoku.getAllFields().size();outerCounter++){
-            {
-                SudokuField checkField = checkList.get(outerCounter);
-                List<Integer> listOfLinkedIDs = checkField.getLinkedFieldsIDs();
-                for (int i:listOfLinkedIDs){
-                    SudokuField check = checkField.getLinkedFieldByID(i);
-                    if (check.getValue()==checkField.getValue()){
-                        checkField.removeLinkedFieldByID(i);
-                    }
-                }
-            }
-        }
+        removeFieldsWithSameValuesFromTheirLinkedLists(sudoku);
         restoreBackup(sudoku, backup);
-    }
-
-    private void restoreBackup(Sudoku sudoku, Sudoku backup) {
-        sudoku.copyValuesFrom(backup);
     }
 
     private Sudoku makeBackup(Sudoku sudoku) {
@@ -43,7 +27,33 @@ public class OnlyOneValueInEachSet implements SudokuRule {
         return backup;
     }
 
-    private  List<SudokuField> getNewSudokuFields(){
+    private void removeFieldsWithSameValuesFromTheirLinkedLists(Sudoku sudoku) {
+        List<SudokuField> fields = sudoku.getAllFields();
+        for (int outerCounter = 0; outerCounter < sudoku.getAllFields().size(); outerCounter++) {
+            {
+                SudokuField field = fields.get(outerCounter);
+                removeLinkedFieldsWithSameValueAsCheckField(field);
+            }
+        }
+    }
+
+    private void removeLinkedFieldsWithSameValueAsCheckField(SudokuField field) {
+        List<Integer> linkedFieldsIDs = field.getLinkedFieldsIDs();
+        for (int i : linkedFieldsIDs) {
+            SudokuField linkedField = field.getLinkedFieldByID(i);
+            if (linkedField.getValue() == field.getValue()) {
+                field.removeLinkedFieldByID(i);
+            }
+        }
+    }
+
+    private void restoreBackup(Sudoku sudoku, Sudoku backup) {
+        sudoku.copyValuesFrom(backup);
+    }
+
+
+
+    private List<SudokuField> getNewSudokuFields() {
         return sudokuFactory.getSudoku().getAllFields();
     }
 }

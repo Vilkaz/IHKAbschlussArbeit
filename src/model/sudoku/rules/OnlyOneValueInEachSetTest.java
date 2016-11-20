@@ -18,8 +18,8 @@ public class OnlyOneValueInEachSetTest {
     @Test
     public void validateLength()  {
         Sudoku sudoku = sudokuFactory.getSudoku();
-        SudokuRules validator = new SudokuRules();
-        validator.learnRules(sudoku);
+        SudokuRules sudokuRules = new SudokuRules();
+        sudokuRules.teachRules(sudoku);
         Collection linkedFields = sudoku.getAllFields().get(0).getLinkedFields();
         assertEquals(20, linkedFields.size());
     }
@@ -28,7 +28,7 @@ public class OnlyOneValueInEachSetTest {
     public void validateEachLinkedField(){
         Sudoku sudoku = sudokuFactory.getSudoku();
         SudokuRules validator = new SudokuRules();
-        validator.learnRules(sudoku);
+        validator.teachRules(sudoku);
         SudokuField field = sudoku.getAllFields().get(0);
         for (SudokuField linkedField:field.getLinkedFields()){
             assertNotEquals(field.getValue(), linkedField.getValue());

@@ -3,7 +3,6 @@ package model.sudoku.validator;
 import model.sudoku.Sudoku;
 import model.sudoku.SudokuFactory;
 import model.sudoku.SudokuField;
-import model.sudoku.rules.SudokuRule;
 import model.sudoku.rules.SudokuRules;
 import org.junit.Test;
 
@@ -23,7 +22,7 @@ public class SudokuValidatorTest {
         SudokuField field = sudoku.getAllFields().get(0);
         field.setValue(0);
         assertFalse(validator.isValid(sudoku));
-        rules.learnRules(sudoku);
+        rules.teachRules(sudoku);
         field.calculateValue();
         assertTrue(validator.isValid(sudoku));
     }

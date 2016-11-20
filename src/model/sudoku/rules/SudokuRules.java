@@ -14,7 +14,7 @@ public class SudokuRules {
         this.rules = SudokuRulesFactory.getRules();
     }
 
-    public void learnRules(Sudoku sudoku) {
+    public void teachRules(Sudoku sudoku) {
         do {
             for (SudokuRule rule : rules) {
                 rule.implementRule(sudoku);

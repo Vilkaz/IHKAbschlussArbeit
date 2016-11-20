@@ -1,7 +1,6 @@
 package controller;
 
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
@@ -56,7 +55,7 @@ public class MainViewController {
             showHint("lerne Regel, bitte warten");
             disableMainButtons();
             SudokuRules rules = new SudokuRules();
-            rules.learnRules(this.sudoku);
+            rules.teachRules(this.sudoku);
             hideText();
             enableMainButtons();
         } else {
