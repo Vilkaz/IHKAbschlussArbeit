@@ -4,6 +4,7 @@ import model.sudoku.Sudoku;
 import model.sudoku.SudokuFactory;
 import model.sudoku.SudokuField;
 
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -28,21 +29,17 @@ public class OnlyOneValueInEachSet implements SudokuRule {
     }
 
     private void removeFieldsWithSameValuesFromTheirLinkedLists(Sudoku sudoku) {
-        List<SudokuField> fields = sudoku.getAllFields();
-        for (int outerCounter = 0; outerCounter < sudoku.getAllFields().size(); outerCounter++) {
-            {
-                SudokuField field = fields.get(outerCounter);
-                removeLinkedFieldsWithSameValueAsCheckField(field);
-            }
+        for (SudokuField field : sudoku.getAllFields()) {
+            removeLinkedFieldsWithSameValueAsCheckedField(field);
         }
     }
 
-    private void removeLinkedFieldsWithSameValueAsCheckField(SudokuField field) {
-        List<Integer> linkedFieldsIDs = field.getLinkedFieldsIDs();
-        for (int i : linkedFieldsIDs) {
-            SudokuField linkedField = field.getLinkedFieldByID(i);
+    private void removeLinkedFieldsWithSameValueAsCheckedField(SudokuField field) {
+        Iterator<SudokuField> iterator = field.getLinkedFields().iterator();
+        while (iterator.hasNext()) {
+            SudokuField linkedField = iterator.next();
             if (linkedField.getValue() == field.getValue()) {
-                field.removeLinkedFieldByID(i);
+                iterator.remove();
             }
         }
     }
@@ -50,7 +47,6 @@ public class OnlyOneValueInEachSet implements SudokuRule {
     private void restoreBackup(Sudoku sudoku, Sudoku backup) {
         sudoku.copyValuesFrom(backup);
     }
-
 
 
     private List<SudokuField> getNewSudokuFields() {
