@@ -4,3 +4,7 @@
     -fx-background-insets: 1px;
     -fx-pref-width: 35px;
 }
+
+.linkedField{
+    -fx-background-color: blue;
+}
