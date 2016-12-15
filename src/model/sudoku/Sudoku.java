@@ -3,6 +3,7 @@ package model.sudoku;
 import org.junit.runners.model.InitializationError;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -63,7 +64,7 @@ public class Sudoku {
         return ((row / 3) * 3) + (column / 3);
     }
 
-    public List<SudokuField> getFieldsWithoutValue() {
+    public List<SudokuField> getEmptyFields() {
         List<SudokuField> fields = new ArrayList();
         for (SudokuField field : this.getAllFields()){
             if (field.getValue()<1){
@@ -71,5 +72,23 @@ public class Sudoku {
             }
         }
         return fields;
+    }
+
+    public void solveIT() {
+        List<SudokuField> emptyFields = this.getEmptyFields();
+        boolean newValues;
+        do {
+            newValues = false;
+            Iterator<SudokuField> iterator = emptyFields.iterator();
+            while (iterator.hasNext()){
+                SudokuField field =  iterator.next();
+                field.calculateValue();
+                if (field.getValue()>0){
+                    newValues=true;
+                    iterator.remove();
+                }
+            }
+        } while (emptyFields.size()>0 && newValues);
+
     }
 }

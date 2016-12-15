@@ -1,5 +1,6 @@
 package model.sudoku;
 
+import model.sudoku.rules.SudokuRules;
 import org.junit.Test;
 
 import java.util.*;
@@ -89,15 +90,29 @@ public class SudokuTest {
 
 
     @Test
-    public void testGetFieldsWithoutValue(){
+    public void testGetEmptyFields(){
         Sudoku sudoku = factory.getSudoku();
-        assertTrue(sudoku.getFieldsWithoutValue().size()==0);
+        assertTrue(sudoku.getEmptyFields().size()==0);
         List<SudokuField> fields = sudoku.getAllFields();
         for (int i = 0;i<10;i++){
             fields.get(i).setValue(0);
         }
-        assertTrue(sudoku.getFieldsWithoutValue().size()==10);
+        assertTrue(sudoku.getEmptyFields().size()==10);
 
+    }
+
+    @Test
+    public void testSolveIT(){
+        Sudoku sudoku = factory.getSudoku();
+        SudokuRules rules = new SudokuRules();
+        rules.teachRules(sudoku);
+        List<SudokuField> fields = sudoku.getAllFields();
+        for (int i = 0;i<10;i++){
+            fields.get(i).setValue(0);
+        }
+        assertTrue(sudoku.getEmptyFields().size()==10);
+        sudoku.solveIT();
+        assertTrue(sudoku.getEmptyFields().size()==0);
     }
 
 }
