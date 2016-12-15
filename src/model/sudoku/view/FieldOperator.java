@@ -1,6 +1,7 @@
 package model.sudoku.view;
 
 import javafx.scene.control.Button;
+import javafx.scene.layout.Pane;
 import model.sudoku.SudokuField;
 
 import java.util.List;
@@ -39,8 +40,12 @@ public class FieldOperator {
 
     private void setButtonCoordinates(ViewDataDTO data) {
         Button source = (Button) data.getEvent().getSource();
-        this.button.setLayoutX(source.getLayoutX() + data.getSudokuGrid().getLayoutX());
-        this.button.setLayoutY(source.getLayoutY() + data.getSudokuGrid().getLayoutY());
+        Button target = (Button)data.getEvent().getTarget();
+        Pane pane = (Pane) target.getParent();
+        this.button.setLayoutX(source.getLayoutX() + data.getSudokuGrid().getLayoutX()+ pane.getLayoutX());
+        this.button.setLayoutY(source.getLayoutY() + data.getSudokuGrid().getLayoutY()+pane.getLayoutY());
+
+
     }
 
     private void deleteFieldValue(ViewDataDTO data){

@@ -22,22 +22,22 @@ public class SudokuBinder {
     }
 
     private void bindModelCubeToViewCube(NineFields modelCube, GridPane viewCube) {
-        for (int i = 0; i < 9; i++) {
-            Button button = (Button) viewCube.getChildren().get(i);
-            SudokuField field = modelCube.getFields().get(i);
+//        for (int i = 0; i < 9; i++) {
+//            Button button = (Button) viewCube.getChildren().get(i);
+//            SudokuField field = modelCube.getFields().get(i);
 //            bindSudokuFieldToView(field, button);
-            button.setText(String.valueOf(i));
+//            button.setText(String.valueOf(i));
+//        }
+            bindSudokuFieldToView(modelCube.getFields().get(0), (Button) viewCube.getChildren().get(0));
+            bindSudokuFieldToView(modelCube.getFields().get(1), (Button) viewCube.getChildren().get(1));
+            bindSudokuFieldToView(modelCube.getFields().get(2), (Button) viewCube.getChildren().get(2));
+            bindSudokuFieldToView(modelCube.getFields().get(3), (Button) viewCube.getChildren().get(3));
+            bindSudokuFieldToView(modelCube.getFields().get(4), (Button) viewCube.getChildren().get(6));
+            bindSudokuFieldToView(modelCube.getFields().get(5), (Button) viewCube.getChildren().get(7));
+            bindSudokuFieldToView(modelCube.getFields().get(6), (Button) viewCube.getChildren().get(4));
+            bindSudokuFieldToView(modelCube.getFields().get(7), (Button) viewCube.getChildren().get(8));
+            bindSudokuFieldToView(modelCube.getFields().get(8), (Button) viewCube.getChildren().get(5));
         }
-//        bindSudokuFieldToView(modelCube.getFields().get(0), (Button) viewCube.getChildren().get(0));
-//        bindSudokuFieldToView(modelCube.getFields().get(1), (Button) viewCube.getChildren().get(1));
-//        bindSudokuFieldToView(modelCube.getFields().get(2), (Button) viewCube.getChildren().get(2));
-//        bindSudokuFieldToView(modelCube.getFields().get(3), (Button) viewCube.getChildren().get(3));
-        bindSudokuFieldToView(modelCube.getFields().get(4), (Button) viewCube.getChildren().get(6));
-        bindSudokuFieldToView(modelCube.getFields().get(5), (Button) viewCube.getChildren().get(7));
-        bindSudokuFieldToView(modelCube.getFields().get(6), (Button) viewCube.getChildren().get(4));
-        bindSudokuFieldToView(modelCube.getFields().get(7), (Button) viewCube.getChildren().get(8));
-        bindSudokuFieldToView(modelCube.getFields().get(8), (Button) viewCube.getChildren().get(5));
-    }
 
 
     private void bindSudokuFieldToView(SudokuField field, Button button) {

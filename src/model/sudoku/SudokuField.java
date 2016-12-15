@@ -1,9 +1,6 @@
 package model.sudoku;
 
-import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-import sun.java2d.pipe.SpanShapeRenderer;
 
 import java.util.*;
 
@@ -20,10 +17,11 @@ public class SudokuField {
 
     public String getViewValue() {
         return viewValue.get();
+
     }
 
     public SimpleStringProperty viewValueProperty() {
-        if (value==0){
+        if (value == 0) {
             viewValue.set("");
         } else {
             viewValue.set(String.valueOf(this.value));
@@ -32,7 +30,7 @@ public class SudokuField {
     }
 
     public SudokuField(int value) {
-        this(-1,value);
+        this(-1, value);
     }
 
     public SudokuField(int id, int value) {
@@ -41,34 +39,33 @@ public class SudokuField {
         initAllPosibleValues();
     }
 
-    public void removeLinkedFieldByID(int id){
+    public void removeLinkedFieldByID(int id) {
         Iterator<SudokuField> iterator = linkedFields.iterator();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             SudokuField field = iterator.next();
-            if (field.getId()==id){
+            if (field.getId() == id) {
                 iterator.remove();
             }
         }
     }
 
 
-
-    public int getAmountOfLinkedFields(){
+    public int getAmountOfLinkedFields() {
         return linkedFields.size();
     }
 
 
-    public List<SudokuField> getLinkedFieldsWithSameIDs(SudokuField requestingField){
+    public List<SudokuField> getLinkedFieldsWithSameIDs(SudokuField requestingField) {
         List<SudokuField> fieldsWithSameID = new ArrayList<>();
-        for (SudokuField field:requestingField.getLinkedFields()){
+        for (SudokuField field : requestingField.getLinkedFields()) {
             fieldsWithSameID.add(getLinkedFieldByID(field.getId()));
         }
         return fieldsWithSameID;
     }
 
-    public SudokuField getLinkedFieldByID(int id){
-        for (SudokuField field:linkedFields){
-            if (field.getId()==id){
+    public SudokuField getLinkedFieldByID(int id) {
+        for (SudokuField field : linkedFields) {
+            if (field.getId() == id) {
                 return field;
             }
         }
@@ -76,9 +73,12 @@ public class SudokuField {
     }
 
 
-
     public void setValue(int value) {
-        this.viewValue.setValue(String.valueOf(value));
+        if (value==0){
+            this.viewValue.setValue("");
+        } else {
+            this.viewValue.setValue(String.valueOf(value));
+        }
         this.value = value;
     }
 
@@ -91,15 +91,13 @@ public class SudokuField {
     }
 
 
-
-
     public int getId() {
         return id;
     }
 
     public List getLinkedFieldsIDs() {
         List<Integer> ids = new ArrayList<>();
-        for (SudokuField field : this.linkedFields){
+        for (SudokuField field : this.linkedFields) {
             ids.add(field.getId());
         }
         return ids;
@@ -107,16 +105,16 @@ public class SudokuField {
 
     public void calculateValue() {
         initAllPosibleValues();
-        for (SudokuField field :  linkedFields){
+        for (SudokuField field : linkedFields) {
             possibleValues.remove(field.getValue());
         }
-        if (possibleValues.size()==1){
-            this.value=possibleValues.iterator().next();
+        if (possibleValues.size() == 1) {
+            this.value = possibleValues.iterator().next();
             this.viewValueProperty().set(String.valueOf(this.value));
         }
     }
 
-    private void initAllPosibleValues(){
+    private void initAllPosibleValues() {
         this.possibleValues = new HashSet<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
     }
 
