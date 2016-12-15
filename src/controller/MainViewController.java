@@ -79,6 +79,7 @@ public class MainViewController {
 
     @FXML
     public void solveSudoku(ActionEvent actionEvent) {
+
     }
 
     private List<GridPane> getGridCubes() {

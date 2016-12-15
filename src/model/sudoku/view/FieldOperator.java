@@ -44,8 +44,6 @@ public class FieldOperator {
         Pane pane = (Pane) target.getParent();
         this.button.setLayoutX(source.getLayoutX() + data.getSudokuGrid().getLayoutX()+ pane.getLayoutX());
         this.button.setLayoutY(source.getLayoutY() + data.getSudokuGrid().getLayoutY()+pane.getLayoutY());
-
-
     }
 
     private void deleteFieldValue(ViewDataDTO data){

@@ -87,4 +87,17 @@ public class SudokuTest {
 
     }
 
+
+    @Test
+    public void testGetFieldsWithoutValue(){
+        Sudoku sudoku = factory.getSudoku();
+        assertTrue(sudoku.getFieldsWithoutValue().size()==0);
+        List<SudokuField> fields = sudoku.getAllFields();
+        for (int i = 0;i<10;i++){
+            fields.get(i).setValue(0);
+        }
+        assertTrue(sudoku.getFieldsWithoutValue().size()==10);
+
+    }
+
 }

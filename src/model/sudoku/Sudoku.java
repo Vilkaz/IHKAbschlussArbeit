@@ -63,4 +63,13 @@ public class Sudoku {
         return ((row / 3) * 3) + (column / 3);
     }
 
+    public List<SudokuField> getFieldsWithoutValue() {
+        List<SudokuField> fields = new ArrayList();
+        for (SudokuField field : this.getAllFields()){
+            if (field.getValue()<1){
+                fields.add(field);
+            }
+        }
+        return fields;
+    }
 }
