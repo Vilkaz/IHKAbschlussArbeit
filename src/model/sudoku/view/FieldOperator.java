@@ -1,5 +1,6 @@
 package model.sudoku.view;
 
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import model.sudoku.SudokuField;
@@ -52,6 +53,10 @@ public class FieldOperator {
         int id = Integer.parseInt(source.getId());
         List<SudokuField> fields = data.getSudoku().getAllFields();
         fields.get(id).setValue(0);
+        /**
+         *  the code works, but javaFX wants more explicit parent,
+         *  so we have an exception here.
+         */
         data.getMainPane().getChildren().remove(this.button);
     }
 

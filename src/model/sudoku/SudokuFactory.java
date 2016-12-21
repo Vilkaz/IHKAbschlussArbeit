@@ -18,7 +18,7 @@ public class SudokuFactory {
             for (int row = 0; row < 9; row++) {
                 for (int column = 0; column < 9; column++) {
                     int trys = 0;
-                    for (int number : get9UniqueNumbersInRandomOrder()) {
+                    for (int number : getNineUniqueNumbersInRandomOrder()) {
                         if (numberIsUnique(row, column, number)) {
                             insertNumberIntoSudoku(row, column, number);
                             validFields++;
@@ -58,7 +58,6 @@ public class SudokuFactory {
         NineFields vertical = sudoku.getVerticalLines().get(column);
         NineFields horizontal = sudoku.getHorizontalLines().get(row);
         NineFields cubes = sudoku.getCubes().get(cubicleNumber);
-        boolean hori = horizontal.contains(number);
         if (!vertical.contains(number)
                 && !horizontal.contains(number)
                 && !cubes.contains(number)) {
@@ -69,7 +68,7 @@ public class SudokuFactory {
 
     }
 
-    List<Integer> get9UniqueNumbersInRandomOrder() {
+    List<Integer> getNineUniqueNumbersInRandomOrder() {
         List randomNumbers = new ArrayList();
         while (randomNumbers.size() < 9) {
             int randomNumber = getRandomSudokuNumber();

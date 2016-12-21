@@ -1,4 +1,4 @@
-package model.sudoku.rules;
+package model.sudoku.validator;
 
 import model.sudoku.SudokuField;
 import org.junit.Test;

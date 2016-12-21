@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" stylesheets="view/css/sudoku.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainViewController">
+<Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="view/css/sudoku.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainViewController">
    <children>
       <Button fx:id="generateSudoku" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#generateSudoku" text="generiere Sudoku" />
       <Button fx:id="learnToSolve" layoutX="171.0" layoutY="14.0" mnemonicParsing="false" onAction="#learnToSolve" text="Lerne Sudoku zu lösen" />

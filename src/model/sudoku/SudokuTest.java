@@ -111,7 +111,7 @@ public class SudokuTest {
             fields.get(i).setValue(0);
         }
         assertTrue(sudoku.getEmptyFields().size()==10);
-        sudoku.solveIT();
+        sudoku.solveSudoku();
         assertTrue(sudoku.getEmptyFields().size()==0);
     }
 

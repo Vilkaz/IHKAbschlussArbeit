@@ -31,8 +31,8 @@ public class SudokuFactoryTest {
     }
 
     @Test
-    public void testGet9UniqueNumbersInRandomOrder() {
-        List<Integer> uniqueNumbers = sudokuFactory.get9UniqueNumbersInRandomOrder();
+    public void testGetNineUniqueNumbersInRandomOrder() {
+        List<Integer> uniqueNumbers = sudokuFactory.getNineUniqueNumbersInRandomOrder();
         Collections.sort(uniqueNumbers);
         for (int i = 1; i <= 9; i++) {
             assertEquals(i, (int) uniqueNumbers.get(i - 1));

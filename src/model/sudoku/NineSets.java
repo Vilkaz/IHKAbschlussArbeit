@@ -25,12 +25,5 @@ public class NineSets {
         return sets.get(i);
     }
 
-    public boolean contains(int i){
-        for (NineFields set : sets){
-             if (set.contains(i)){
-                 return true;
-             }
-        }
-        return false;
-    }
+
 }

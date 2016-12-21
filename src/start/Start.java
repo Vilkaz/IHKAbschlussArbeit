@@ -5,10 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import model.sudoku.Sudoku;
-import model.sudoku.SudokuFactory;
-import model.sudoku.rules.LinkedFieldSizeValidator;
-import model.sudoku.rules.SudokuRules;
 
 public class Start extends Application {
 
@@ -16,7 +12,7 @@ public class Start extends Application {
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/view/mainView.fxml"));
         primaryStage.setTitle("Sudoku IHK Projekt");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root, 450, 450));
         primaryStage.show();
     }
 

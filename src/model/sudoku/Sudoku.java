@@ -57,6 +57,8 @@ public class Sudoku {
     public NineSets getCubes() {
         return cubes;
     }
+
+
     /**
      * takes row and collumn from actual number, and calculates in which cubical Field the number is
      */
@@ -74,7 +76,8 @@ public class Sudoku {
         return fields;
     }
 
-    public void solveIT() {
+
+        public void solveSudoku() {
         List<SudokuField> emptyFields = this.getEmptyFields();
         boolean newValues;
         do {
@@ -89,6 +92,5 @@ public class Sudoku {
                 }
             }
         } while (emptyFields.size()>0 && newValues);
-
     }
 }
