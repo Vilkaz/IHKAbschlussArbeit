@@ -1,8 +1,8 @@
 package model.sudoku.rules;
 
-import model.sudoku.Sudoku;
-import model.sudoku.SudokuFactory;
-import model.sudoku.SudokuField;
+import model.sudoku.sudoku.Sudoku;
+import model.sudoku.sudoku.SudokuFactory;
+import model.sudoku.sudoku.SudokuField;
 import org.junit.Test;
 
 import java.util.Collection;

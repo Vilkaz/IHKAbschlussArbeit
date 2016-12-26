@@ -1,6 +1,6 @@
 package model.sudoku.rules;
 
-import model.sudoku.Sudoku;
+import model.sudoku.sudoku.Sudoku;
 import model.sudoku.validator.LinkedFieldSizeValidator;
 
 import java.util.Collection;

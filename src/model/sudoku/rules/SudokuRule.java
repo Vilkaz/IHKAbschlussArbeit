@@ -1,6 +1,6 @@
 package model.sudoku.rules;
 
-import model.sudoku.Sudoku;
+import model.sudoku.sudoku.Sudoku;
 
 /**
  * Created by Vilkas on 30/10/2016.

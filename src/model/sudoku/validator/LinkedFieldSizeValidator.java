@@ -1,6 +1,6 @@
 package model.sudoku.validator;
 
-import model.sudoku.SudokuField;
+import model.sudoku.sudoku.SudokuField;
 
 import java.util.List;
 

@@ -1,9 +1,8 @@
 package model.sudoku.view;
 
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
-import model.sudoku.SudokuField;
+import model.sudoku.sudoku.SudokuField;
 
 import java.util.List;
 
@@ -57,7 +56,7 @@ public class FieldOperator {
          *  the code works, but javaFX wants more explicit parent,
          *  so we have an exception here.
          */
-        data.getMainPane().getChildren().remove(this.button);
+//        data.getMainPane().getChildren().remove(this.button);
     }
 
 }

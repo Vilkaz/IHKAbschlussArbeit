@@ -1,9 +1,9 @@
 package model.sudoku.validator;
 
-import model.sudoku.NineFields;
-import model.sudoku.NineSets;
-import model.sudoku.Sudoku;
-import model.sudoku.SudokuField;
+import model.sudoku.sudoku.NineFields;
+import model.sudoku.sudoku.NineSets;
+import model.sudoku.sudoku.Sudoku;
+import model.sudoku.sudoku.SudokuField;
 
 import java.util.HashSet;
 import java.util.List;

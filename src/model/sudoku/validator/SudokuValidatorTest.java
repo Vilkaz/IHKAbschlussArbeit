@@ -1,8 +1,8 @@
 package model.sudoku.validator;
 
-import model.sudoku.Sudoku;
-import model.sudoku.SudokuFactory;
-import model.sudoku.SudokuField;
+import model.sudoku.sudoku.Sudoku;
+import model.sudoku.sudoku.SudokuFactory;
+import model.sudoku.sudoku.SudokuField;
 import model.sudoku.rules.SudokuRules;
 import org.junit.Test;
 

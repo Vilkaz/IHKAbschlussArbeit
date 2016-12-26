@@ -1,4 +1,4 @@
-package model.sudoku;
+package model.sudoku.sudoku;
 
 import javafx.beans.property.SimpleStringProperty;
 

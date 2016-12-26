@@ -3,7 +3,7 @@ package model.sudoku.view;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-import model.sudoku.Sudoku;
+import model.sudoku.sudoku.Sudoku;
 
 /**
  * Created by vkukanauskas on 05/11/2016.

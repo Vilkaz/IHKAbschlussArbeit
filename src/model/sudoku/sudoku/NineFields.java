@@ -1,4 +1,4 @@
-package model.sudoku;
+package model.sudoku.sudoku;
 
 import java.util.ArrayList;
 import java.util.List;

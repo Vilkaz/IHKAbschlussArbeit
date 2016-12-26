@@ -2,10 +2,10 @@ package model.sudoku.view;
 
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
-import model.sudoku.NineFields;
-import model.sudoku.NineSets;
-import model.sudoku.Sudoku;
-import model.sudoku.SudokuField;
+import model.sudoku.sudoku.NineFields;
+import model.sudoku.sudoku.NineSets;
+import model.sudoku.sudoku.Sudoku;
+import model.sudoku.sudoku.SudokuField;
 
 import java.util.List;
 
