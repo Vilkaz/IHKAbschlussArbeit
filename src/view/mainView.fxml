@@ -35,7 +35,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showFieldMenu" onMouseEntered="#showLindekFields" styleClass="sudokuField" text="" textAlignment="CENTER" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showFieldMenu"  styleClass="sudokuField" text="" textAlignment="CENTER" />
                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showFieldMenu" styleClass="sudokuField" text="" textAlignment="CENTER" GridPane.columnIndex="1" />
                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showFieldMenu" styleClass="sudokuField" text="" textAlignment="CENTER" GridPane.columnIndex="2" />
                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showFieldMenu" styleClass="sudokuField" text="" textAlignment="CENTER" GridPane.rowIndex="1" />
